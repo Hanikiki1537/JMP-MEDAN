@@ -5,6 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Informasi_Aplikasi">
+    tools:context=".InformasiAplikasi">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="56dp"
+        android:text="Campus (Kampus): Secara umum, campus (atau kampus dalam bahasa Indonesia) adalah area atau wilayah yang termasuk dalam institusi pendidikan, di mana kegiatan akademik, administratif, dan sosial berlangsung. Ini termasuk gedung-gedung perkuliahan, laboratorium, perpustakaan, fasilitas olahraga, dan area-area lain yang mendukung kehidupan mahasiswa dan staf."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,10 @@
         android:text="Cari Data" />
 
     <ListView
-
+        android:id="@+id/listView"
+        layout_heigh="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="319dp" />
+        android:layout_height="323dp"
+        tools:ignore="MissingPrefix" />
+
 </LinearLayout>

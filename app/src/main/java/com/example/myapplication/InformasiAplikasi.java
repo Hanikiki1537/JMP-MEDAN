@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Informasi_Aplikasi extends AppCompatActivity {
+public class InformasiAplikasi extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

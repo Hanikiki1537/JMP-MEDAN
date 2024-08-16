@@ -1,7 +1,12 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import android.view.View;
 import android.widget.Button;
@@ -9,21 +14,28 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
-    Button btnregister;
-    EditText eduser,edpass;
+
+    //Manggil Button Register
+    Button btnRegist;
+    EditText eduser, edpass;
     DatabaseHelper dblogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-
-        btnregister = findViewById(R.id.buttonRegister);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        btnRegist = (Button) findViewById(R.id.buttonRegister);
         eduser = findViewById(R.id.editTextUsername);
         edpass = findViewById(R.id.editTextPassword);
         dblogin = new DatabaseHelper(this);
 
-        btnregister.setOnClickListener(new View.OnClickListener() {
+        btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = eduser.getText().toString();
@@ -35,13 +47,12 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Registration Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Registered Failed", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "User Already Exists", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -24,12 +25,13 @@ public class ListData extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     EditText editTextSearch;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lihat_data);
+        setContentView(R.layout.activity_list_data);
 
-        listView = findViewById(R.id.main);
+        listView = findViewById(R.id.listView);
         editTextSearch = findViewById(R.id.editTextText);
         myDb = new DatabaseHelper(this);
         listData = new ArrayList<>();
@@ -62,7 +64,7 @@ public class ListData extends AppCompatActivity {
                 String[] itemParts = selectedItem.split("\n");
                 String itemId = itemParts[0].replace("ID: ", "");
 
-                Intent intent = new Intent(ListData.this, Input_Data.class);
+                Intent intent = new Intent(ListData.this, InputData.class);
                 intent.putExtra("ID", itemId);
                 startActivity(intent);
             }

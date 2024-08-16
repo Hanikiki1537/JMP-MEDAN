@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Input_Data">
+    android:orientation="vertical"
+    tools:context=".InputData">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="58dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editnama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_marginTop="67dp"
         android:inputType="text"
-        android:text="Masukkan Nama"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="224dp" />
+        android:minHeight="48dp"
+        android:hint="Masukkan Nama"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editumur"
@@ -31,9 +31,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Masukkan Umur"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="282dp" />
+        android:minHeight="48dp"
+        android:hint="Masukkan Umur"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editmoto"
@@ -41,16 +41,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Masukkan Motto"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="338dp" />
+        android:minHeight="48dp"
+        android:hint="Masukkan Motto"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simpan"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="409dp" />
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

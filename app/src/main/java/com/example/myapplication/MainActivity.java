@@ -1,26 +1,22 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.view.View;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.example.myapplication.Input_Data;
-import com.example.myapplication.Login;
-import com.example.myapplication.R;
-
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnList, btnInput, btnInfo, btnKeluar;
 
+    Button btnDt, btnInDt, btnInfo, btnLogout;
 
-    @SuppressLint("MissingInflatedId")
+    //menampilkan list menu
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,42 +27,41 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnList = findViewById(R.id.buttonList);
-        btnInput = findViewById(R.id.buttonInput);
-        btnInfo = findViewById(R.id.buttonInformasi);
-        btnKeluar = findViewById(R.id.buttonKeluar);
+        btnDt = (Button) findViewById(R.id.buttonList);
+        btnInDt = (Button) findViewById(R.id.buttonInput);
+        btnInfo = (Button) findViewById(R.id.buttonInformasi);
+        btnLogout = (Button) findViewById(R.id.buttonKeluar);
 
-        btnList.setOnClickListener(new View.OnClickListener() {
+        btnDt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListData.class);
                 startActivity(intent);
-
             }
-
-
-        });
-        btnInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Input_Data.class);
-                startActivity(intent);
-
-            }
-
-
         });
 
-        btnKeluar.setOnClickListener(new View.OnClickListener() {
+        btnInDt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Login.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InputData.class);
                 startActivity(intent);
             }
         });
 
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InformasiAplikasi.class);
+                startActivity(intent);
+            }
+        });
 
-
-
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Login2.class);
+                startActivity(intent);
+            }
+        });
     }
 }

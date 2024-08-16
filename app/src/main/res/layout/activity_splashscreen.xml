@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".">
-
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="218dp"
         android:textAlignment="center"
-        app:srcCompat="@drawable/kom"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="256dp"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/logo"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
